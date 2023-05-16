@@ -1,13 +1,21 @@
-import { useState } from 'react';
-import './App.css';
-import MoleContainer from './components/MoleContainer';
+import { useEffect, useState } from "react";
+import "./App.css";
+import MoleContainer from "./components/MoleContainer";
 
 function App() {
-  let [score, setScore] = useState(0)
+  let [score, setScore] = useState(0);
+  const createMoleHill = (numHills = 9) => {
+    let hills = [];
+    for (let i = 0; i < numHills; i++) {
+      hills.push(<MoleContainer setScore={setScore} score={score} />);
+    }
+    return <div className="hills">{hills}</div>;
+  };
 
   return (
     <div className="App">
-        <MoleContainer/>
+      <h1>{score}</h1>
+      {createMoleHill()}
     </div>
   );
 }

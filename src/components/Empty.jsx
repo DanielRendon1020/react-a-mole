@@ -11,6 +11,8 @@ export default function Empty({setMoleIsUp}) {
     
     }, [])
     return <div>
-        <img src={mole} style={{ width: '30vw' }} />
+        <img 
+        src={mole} 
+        style={{ width: '10vw' }} />
     </div>
 }
